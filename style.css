@@ -1,0 +1,475 @@
+:root {
+    --ensibs-green: #00843D;
+    --ensibs-dark: #006630;
+    --ensibs-light: #E8F5E9;
+    --text-color: #333;
+    --background-light: #fff;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    min-height: 100vh;
+    display: relative;
+    flex-direction: column;
+}
+
+/* Navigation */
+#main-nav {
+    background-color: var(--ensibs-green);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.nav-links {
+    
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: var(--ensibs-dark);
+}
+
+/* Main Content */
+main {
+    margin-top: 80px;
+    flex: 1;
+    padding: 2rem;
+    background-color: var(--background-light);
+}
+
+section {
+    display: none;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--ensibs-light);
+    border-radius: 8px;
+    box-shadow: 10 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+section.active {
+    display: block;
+}
+
+h1 {
+    color: var(--ensibs-green);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: #272626;
+    margin-bottom: 2rem;
+}
+
+/* Partner Logos - Style amélioré */
+.partner-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    padding: 2rem;
+    background: var(--ensibs-green);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.logo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.partner-logo {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(1);
+    transition: all 0.3s ease;
+}
+
+.logo-item:hover .partner-logo {
+    filter: brightness(1.1);
+}
+
+.logo-item span {
+    font-size: 1rem;
+    color: var(--ensibs-green);
+    text-align: center;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.primary-btn,
+.secondary-btn,.third-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background-color: var(--ensibs-green);
+    color: white;
+}
+
+.secondary-btn {
+    background-color: var(--ensibs-light);
+    color: var(--ensibs-green);
+    border: 2px solid var(--ensibs-green);
+}
+.third-btn {
+    background-color: var(--ensibs-green);
+    color: white;
+}
+
+
+.primary-btn:hover,
+.secondary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: var(--ensibs-green);
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Mobile Navigation */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .burger {
+        display: block;
+        position: absolute;
+        right: 2rem;
+        top: 1rem;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        height: calc(100vh - 70px);
+        background-color: var(--ensibs-green);
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transition: right 0.3s ease-in;
+        padding: 2rem;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    main {
+        margin-bottom: 60px;
+    }
+
+    .partner-logos {
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .partner-logo {
+        height: 80px;
+    }
+
+    .logo-item {
+        padding: 1rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+/* Timeline */
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.event {
+    display: flex;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.time {
+    min-width: 100px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+.org-card {
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.org-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.org-card ul {
+    list-style: none;
+}
+
+.org-card li {
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    color: var(--ensibs-green);
+    font-size: 2rem;
+    text-align: center;
+}
+.presentation-text {
+    text-align: left;
+    color: #212120;
+    margin-bottom: 2rem;
+}
+
+p {
+    margin-bottom: 2em; 
+}
+/* Ajouter de l'espace à droite de l'heure */
+.event .time {
+    margin-right: 20px; /* Ajustez cette valeur */
+}
+
+/* Ajouter de l'espace à droite de la description */
+.event .description {
+    margin-right: 20px; /* Si vous souhaitez aussi de l'espace à droite dans la description */
+}
+
+
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+section#inscription {
+    text-align: center; /* Centre le texte et les éléments enfants horizontalement */
+    padding: 20px;
+}
+#inscription-form {
+    display: inline-block; /* Permet au div de se centrer avec text-align */
+    margin: 0 auto; /* Centre le div en cas d'autres styles */
+}
+iframe {
+    border: none;
+}
+
+
+.location-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+.address, .transport {
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+
+/* Galerie Photos */
+#galerie {
+    padding: 2rem;
+    background: var(--ensibs-light);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+h2 {
+    color: var(--ensibs-green);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+
+
+
+/* Lightbox */
+#lightbox {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fond noir transparent */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Toujours au-dessus */
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+#lightbox.active {
+    display: flex; /* Affiche le lightbox */
+}
+
+/* Animation d'apparition */ 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
