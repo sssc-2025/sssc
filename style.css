@@ -2,7 +2,7 @@
     --ensibs-green: #00843D;
     --ensibs-dark: #006630;
     --ensibs-light: #E8F5E9;
-    --ensibs-grey: #A7A7A7;
+    --ensibs-grey: hsl(0, 0%, 90%);
     --text-color: #333;
     --background-light: #fff;
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -69,7 +69,7 @@ section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    background: var(--ensibs-light);
+    background: var(--ensibs-grey);
     border-radius: 8px;
     box-shadow: 10 2px 10px rgba(0,0,0,0.1);
     margin-bottom: 2rem;
@@ -381,7 +381,7 @@ iframe {
 /* Galerie Photos */
 #galerie {
     padding: 2rem;
-    background: var(--ensibs-light);
+    background: var(--ensibs-grey);
     border-radius: 8px;
     box-shadow: var(--shadow);
     margin-bottom: 2rem;
